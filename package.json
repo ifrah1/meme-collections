@@ -1,0 +1,24 @@
+{
+  "name": "meme-collections",
+  "version": "1.0.0",
+  "description": "Meme collections site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifrah1/meme-collections.git"
+  },
+  "author": "Arifur Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifrah1/meme-collections/issues"
+  },
+  "homepage": "https://github.com/ifrah1/meme-collections#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
