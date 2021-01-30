@@ -9,6 +9,9 @@ const PORT = 3000;  // for now local, later will change to .env file
 /* Set up Express App */
 const app = express();
 
+/* Connect to MongoDB*/
+require('./config/database');
+
 /* Config app */
 app.set('view engine', 'ejs');
 
