@@ -11,6 +11,9 @@ const { memesRoute } = require('./routes');
 
 const PORT = 3000;  // for now local, later will change to .env file
 
+/* Load env vars */
+require('dotenv').config();
+
 /* Set up Express App */
 const app = express();
 
