@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy({
                 // save new user to mongDB 
                 newUser.save(function (err) {
                     if (err) return cb(err);
-                    return cb(null, newStudent);
+                    return cb(null, newUser);
                 });
             }
         });
@@ -38,6 +38,6 @@ passport.serializeUser(function (user, done) {
 // Provides Passport with the user from DB we want to assign to req.user object 
 passport.deserializeUser(function (id, done) {
     User.findById(id, function (err, user) {
-        done(err, student);
+        done(err, user);
     });
 });
