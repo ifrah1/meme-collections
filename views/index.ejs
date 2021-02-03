@@ -20,12 +20,15 @@
             </form>
             <div>
                 <% } %>
-
                     <div class="container">
+
                         <div class="row row-cols-3">
-                            <div class="col">Column</div>
-                            <div class="col">Column</div>
-                            <div class="col">Column</div>
+                            <% categories.forEach(category=>{ %>
+                                <div class="category col">
+                                    <%=category.name%>
+
+                                </div>
+                                <% }) %>
                         </div>
                     </div>
     </body>
