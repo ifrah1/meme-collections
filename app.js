@@ -7,7 +7,7 @@ const passport = require('passport');
 
 /* Internal Modules*/
 
-const { memesRoute, oAuth } = require('./routes');
+const { memesRoute, oAuth, catRoute } = require('./routes');
 
 const PORT = 3000;  // for now local, later will change to .env file
 
