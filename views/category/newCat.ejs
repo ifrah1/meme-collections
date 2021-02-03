@@ -1,0 +1,19 @@
+<!-- partial for head -->
+<%- include('../partials/header') %>
+
+    <body>
+        <h1 id="site-title">Meme Collections</h1>
+        <ul>
+            <li>
+                <% if (user) { %>
+                    <a href="/logout">Log Out</a>
+                    <% } else { %>
+                        <a href="/auth/google">Login with Google</a>
+                        <% } %>
+            </li>
+        </ul>
+        <p>New category page</p>
+    </body>
+
+    <!-- partial for footer -->
+    <%- include('../partials/footer') %>
