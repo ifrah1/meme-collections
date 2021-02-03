@@ -12,6 +12,11 @@ const showHome = (req, res) => {
         });
 }
 
+const newMeme = (req, res) => {
+    res.send("meme upload page")
+}
+
 module.exports = {
-    index: showHome
+    index: showHome,
+    newMeme
 }

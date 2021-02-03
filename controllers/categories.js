@@ -46,9 +46,15 @@ const showCategory = (req, res) => {
     console.log(req.user);
     console.log(req.params.id) //category id
 
-    res.render('category/showCat', {
-        user: req.user
+    Category.findById({ _id: req.params.id }, (err, category) => {
+        if (err) return console.log(err);
+
+        res.render('category/showCat', {
+            user: req.user,
+            category
+        });
     });
+
 }
 
 module.exports = {
