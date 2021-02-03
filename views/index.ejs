@@ -4,8 +4,8 @@
     <body>
         <h1 id="site-title">Meme Collections</h1>
         <ul>
+            <li><a href="/memes">Home</a></li>
             <li>
-                <!-- new html below -->
                 <% if (user) { %>
                     <a href="/logout">Log Out</a>
                     <% } else { %>
@@ -13,6 +13,25 @@
                         <% } %>
             </li>
         </ul>
+        <% if (user) { %>
+            <div class="add-category-btn"></div>
+            <form action="/category/new">
+                <input type="submit" value="Add Category" />
+            </form>
+            <div>
+                <% } %>
+                    <div class="container">
+
+                        <div class="row row-cols-3">
+                            <% categories.forEach(category=>{ %>
+                                <div class="category col">
+                                    <a href="/category/<%= category._id %> ">
+                                        <%=category.name%>
+                                    </a>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </div>
     </body>
     <!-- partial for footer -->
     <%- include('./partials/footer') %>

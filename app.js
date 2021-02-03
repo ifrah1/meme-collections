@@ -7,7 +7,7 @@ const passport = require('passport');
 
 /* Internal Modules*/
 
-const { memesRoute, oAuth, catRoute } = require('./routes');
+const { memesRoute, oAuthRoute, catRoute } = require('./routes');
 
 const PORT = 3000;  // for now local, later will change to .env file
 
@@ -43,7 +43,8 @@ app.use(passport.session());
 /* Routes */
 app.use('/', memesRoute);
 app.use('/memes', memesRoute);
-app.use('/', oAuth);
+app.use('/', oAuthRoute);
+app.use('/category', catRoute);
 
 /* App listener */
 app.listen(PORT, () => console.log(`Listening on PORT:${PORT}`));
