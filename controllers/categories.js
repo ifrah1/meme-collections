@@ -10,7 +10,7 @@ const showNew = (req, res) => {
 
 const create = (req, res) => {
     // console.log(req.user); //shows logged user info
-    console.log(req.body)
+    // console.log(req.body)
 
     req.body.name = req.body.name.toLowerCase();
 
@@ -43,7 +43,12 @@ const create = (req, res) => {
 }
 
 const showCategory = (req, res) => {
-    res.send("category stuff in here");
+    console.log(req.user);
+    console.log(req.params.id) //category id
+
+    res.render('category/showCat', {
+        user: req.user
+    });
 }
 
 module.exports = {
