@@ -42,8 +42,12 @@ const create = (req, res) => {
 
 }
 
+const showCategory = (req, res) => {
+    res.send("category stuff in here");
+}
 
 module.exports = {
     showNew,
-    create
+    create,
+    showCategory
 }
