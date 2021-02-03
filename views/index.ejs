@@ -13,12 +13,20 @@
             </li>
         </ul>
         <% if (user) { %>
-            <div class="add-category-btn">Tickets: </div>
+            <div class="add-category-btn"></div>
             <form action="/category/new">
                 <input type="submit" value="Add Category" />
             </form>
             <div>
                 <% } %>
+
+                    <div class="container">
+                        <div class="row row-cols-3">
+                            <div class="col">Column</div>
+                            <div class="col">Column</div>
+                            <div class="col">Column</div>
+                        </div>
+                    </div>
     </body>
     <!-- partial for footer -->
     <%- include('./partials/footer') %>
