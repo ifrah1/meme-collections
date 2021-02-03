@@ -1,5 +1,5 @@
 module.exports = {
     memesRoute: require('./memes'),
-    oAuth: require('./oAuth'),
+    oAuthRoute: require('./oAuth'),
     catRoute: require('./categories')
 }

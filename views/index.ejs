@@ -5,7 +5,6 @@
         <h1 id="site-title">Meme Collections</h1>
         <ul>
             <li>
-                <!-- new html below -->
                 <% if (user) { %>
                     <a href="/logout">Log Out</a>
                     <% } else { %>
@@ -13,6 +12,13 @@
                         <% } %>
             </li>
         </ul>
+        <% if (user) { %>
+            <div class="add-category-btn">Tickets: </div>
+            <form action="/category/new">
+                <input type="submit" value="Add Category" />
+            </form>
+            <div>
+                <% } %>
     </body>
     <!-- partial for footer -->
     <%- include('./partials/footer') %>
