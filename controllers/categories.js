@@ -12,6 +12,8 @@ const create = (req, res) => {
     // console.log(req.user); //shows logged user info
     console.log(req.body)
 
+    req.body.name = req.body.name.toLowerCase();
+
     Category.findOne({ 'name': req.body.name }, (err, category) => {
         if (err) return console.log(err);
         if (category) {

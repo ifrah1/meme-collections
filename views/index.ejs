@@ -25,8 +25,9 @@
                         <div class="row row-cols-3">
                             <% categories.forEach(category=>{ %>
                                 <div class="category col">
-                                    <%=category.name%>
-
+                                    <a href="/category/<%= category._id %> ">
+                                        <%=category.name%>
+                                    </a>
                                 </div>
                                 <% }) %>
                         </div>
