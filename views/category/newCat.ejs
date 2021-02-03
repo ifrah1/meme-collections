@@ -4,6 +4,7 @@
     <body>
         <h1 id="site-title">Meme Collections</h1>
         <ul>
+            <li><a href="/memes">Home</a></li>
             <li>
                 <% if (user) { %>
                     <a href="/logout">Log Out</a>
@@ -13,6 +14,13 @@
             </li>
         </ul>
         <p>New category page</p>
+        <form id="new-form" action="/category/new" method="POST">
+            <label>
+                <input type="text" name="name">
+            </label>
+            <input type="submit" value="Add Category">
+
+        </form>
     </body>
 
     <!-- partial for footer -->
