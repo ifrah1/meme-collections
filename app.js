@@ -7,9 +7,12 @@ const passport = require('passport');
 
 /* Internal Modules*/
 
-const { memesRoute } = require('./routes');
+const { memesRoute, oAuth, catRoute } = require('./routes');
 
 const PORT = 3000;  // for now local, later will change to .env file
+
+/* Load env vars */
+require('dotenv').config();
 
 /* Set up Express App */
 const app = express();
@@ -39,6 +42,8 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/', memesRoute);
+app.use('/memes', memesRoute);
+app.use('/', oAuth);
 
 /* App listener */
 app.listen(PORT, () => console.log(`Listening on PORT:${PORT}`));
