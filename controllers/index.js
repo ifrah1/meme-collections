@@ -1,3 +1,4 @@
 module.exports = {
-    memesCtrl: require('./memes')
+    memesCtrl: require('./memes'),
+    categoryCtrl: require('./categories')
 }
