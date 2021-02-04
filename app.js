@@ -40,10 +40,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 /* Routes */
 app.use('/', memesRoute);           //change this to its own landing route later 
 app.use('/memes', memesRoute);
-app.use('/', oAuthRoute); //change this to /oAuth route later 
+app.use('/', oAuthRoute);           //change this to /oAuth route later 
 app.use('/category', catRoute);
 
 /* App listener */
