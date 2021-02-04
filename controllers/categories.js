@@ -1,4 +1,4 @@
-const { Category } = require('../models');
+const { Category, Meme } = require('../models');
 
 const showNew = (req, res) => {
     // console.log(req.user); //shows logged user info
@@ -49,10 +49,13 @@ const showCategory = (req, res) => {
 
     Category.findById({ _id: req.params.id }, (err, category) => {
         if (err) return console.log(err);
+        Meme.find({ category: category._id }, (err, items) => {
+            res.render('category/showCat', {
+                user: req.user,
+                category,
+                items
+            });
 
-        res.render('category/showCat', {
-            user: req.user,
-            category
         });
     });
 
