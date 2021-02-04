@@ -7,6 +7,9 @@ router.get('/new', isLoggedIn, categoryCtrl.showNew);
 // POST app.com/category/new 
 router.post('/new', isLoggedIn, categoryCtrl.create);
 
+// GEt app.com/category/:id 
+router.get('/:id', categoryCtrl.showCategory);
+
 
 
 // Insert this middleware for routes that require a logged in user

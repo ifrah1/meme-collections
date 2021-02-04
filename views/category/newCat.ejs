@@ -2,28 +2,18 @@
 <%- include('../partials/header') %>
 
     <body>
-        <h1 id="site-title">Meme Collections</h1>
-        <ul>
-            <li><a href="/memes">Home</a></li>
-            <li>
-                <% if (user) { %>
-                    <a href="/logout">Log Out</a>
-                    <% } else { %>
-                        <a href="/auth/google">Login with Google</a>
-                        <% } %>
-            </li>
-        </ul>
-        <p>New category page</p>
-        <form id="new-form" action="/category/new" method="POST">
-            <label>
-                <input type="text" name="name">
-            </label>
-            <input type="submit" value="Add Category">
+        <%- include('../partials/nav') %>
+            <p>New category page</p>
+            <form id="new-form" action="/category/new" method="POST">
+                <label>
+                    <input type="text" name="name">
+                </label>
+                <input type="submit" value="Add Category">
 
-        </form>
-        <% if (exist) { %>
-            <p>Category Already exits</p>
-            <% } %>
+            </form>
+            <% if (exist) { %>
+                <p>Category Already exits</p>
+                <% } %>
     </body>
 
     <!-- partial for footer -->

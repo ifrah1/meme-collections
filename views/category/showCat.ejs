@@ -1,0 +1,20 @@
+<!-- partial for head -->
+<%- include('../partials/header') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="category-header">
+                <%= category.name %>
+            </div>
+
+            <% if (user) { %>
+                <div class="add-meme-btn"></div>
+                <form action="/memes/<%= category._id %>/addmeme">
+                    <input type="submit" value="Add Meme" />
+                </form>
+                <div>
+                    <% } %>
+    </body>
+
+    <!-- partial for footer -->
+    <%- include('../partials/footer') %>

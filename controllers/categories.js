@@ -2,6 +2,7 @@ const { Category } = require('../models');
 
 const showNew = (req, res) => {
     // console.log(req.user); //shows logged user info
+    console.log('hit show new category page');
     res.render('category/newCat', {
         user: req.user,
         exist: false
@@ -10,7 +11,7 @@ const showNew = (req, res) => {
 
 const create = (req, res) => {
     // console.log(req.user); //shows logged user info
-    console.log(req.body)
+    // console.log(req.body)
 
     req.body.name = req.body.name.toLowerCase();
 
@@ -42,8 +43,23 @@ const create = (req, res) => {
 
 }
 
+const showCategory = (req, res) => {
+    console.log(req.user);
+    console.log(req.params.id) //category id
+
+    Category.findById({ _id: req.params.id }, (err, category) => {
+        if (err) return console.log(err);
+
+        res.render('category/showCat', {
+            user: req.user,
+            category
+        });
+    });
+
+}
 
 module.exports = {
     showNew,
-    create
+    create,
+    showCategory
 }
