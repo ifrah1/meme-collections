@@ -2,6 +2,7 @@ const { Category } = require('../models');
 
 const showNew = (req, res) => {
     // console.log(req.user); //shows logged user info
+    console.log('hit show new category page');
     res.render('category/newCat', {
         user: req.user,
         exist: false
