@@ -13,7 +13,7 @@ const showHome = (req, res) => {
 }
 
 const newMeme = (req, res) => {
-    console.log('hit here');
+    console.log(req.user);
     Category.findById({ _id: req.params.id }, (err, category) => {
         if (err) return console.log(err);
 

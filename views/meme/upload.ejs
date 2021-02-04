@@ -3,9 +3,24 @@
 
     <body>
         <%- include('../partials/nav') %>
-            <p>
-                <%=category.name%>
-            </p>
+            <div class="container">
+                <h1 class="text-center">
+                    <%=category.name%>
+                </h1>
+                <form action="/category/<%= category._id %> " method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="Select Image:">Select Image:</label>
+                        <input type="file" name="image" class="form-control" id="">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-danger">
+                            Upload Image
+                        </button>
+                    </div>
+                </form>
+            </div>
     </body>
 
     <!-- partial for footer -->
