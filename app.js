@@ -4,6 +4,7 @@ const logger = require('morgan');
 //used for handling for oAuth
 const session = require('express-session');
 const passport = require('passport');
+const methodOverride = require('method-override')
 
 /* Internal Modules*/
 
@@ -28,6 +29,7 @@ app.set('view engine', 'ejs');
 /* Mount middleware */
 app.use(logger('dev'));
 app.use(express.static('public'));
+app.use(methodOverride('_method'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // session handling 
