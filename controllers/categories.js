@@ -1,4 +1,4 @@
-const { Category } = require('../models');
+const { Category, Meme } = require('../models');
 
 const showNew = (req, res) => {
     // console.log(req.user); //shows logged user info
@@ -35,7 +35,7 @@ const create = (req, res) => {
                         exist: false
                     });
                 }
-                res.redirect('/'); //redirect to main page for now
+                res.redirect('/memes'); //redirect to main page for now
 
             });
         }
@@ -44,15 +44,18 @@ const create = (req, res) => {
 }
 
 const showCategory = (req, res) => {
-    console.log(req.user);
-    console.log(req.params.id) //category id
+    // console.log(req.user);
+    // console.log(req.params.id) //category id
 
     Category.findById({ _id: req.params.id }, (err, category) => {
         if (err) return console.log(err);
+        Meme.find({ category: category._id }, (err, images) => {
+            res.render('category/showCat', {
+                user: req.user,
+                category,
+                images
+            });
 
-        res.render('category/showCat', {
-            user: req.user,
-            category
         });
     });
 
