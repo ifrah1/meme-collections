@@ -23,7 +23,7 @@
                                             alt="an image">
 
                                         <% if (img.user.equals(user && user._id)) { %>
-                                            <form action="/memes/<%= img._id %>?_method=DELETE" method="POST">
+                                            <form action="/memes/<%= img._id %>/del?_method=DELETE" method="POST">
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
                                             <% } %>

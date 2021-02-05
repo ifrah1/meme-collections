@@ -17,6 +17,10 @@ const memeSchema = new Schema(
             type: String,
             required: true
         },
+        newFileName: {
+            type: String,
+            required: true
+        },
         category: {
             type: Schema.Types.ObjectId,
             ref: 'Category'

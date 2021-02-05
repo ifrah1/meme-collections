@@ -5,7 +5,7 @@ const showHome = (req, res) => {
     Category.find({})
         .sort('name')            //sorts ascending order 
         .exec((err, categories) => {
-            console.log(categories);
+            // console.log(categories);
             res.render('index', {
                 user: req.user,
                 categories
@@ -39,6 +39,7 @@ const addMeme = (req, res) => {
         filename: req.file.originalname,
         contentType: req.file.mimetype,
         imageBase64: encode_image,
+        newFileName: req.file.filename,
         category: req.params.id,
         user: req.user._id
     }
@@ -54,8 +55,27 @@ const addMeme = (req, res) => {
     // res.redirect('/');
 }
 
+const delImg = (req, res) => {
+    Meme.findByIdAndRemove({ _id: req.params.id }, (err, meme) => {
+        if (err) return console.log(err);
+        console.log(meme.filename, meme.newFileName);
+
+        //set path to delete file
+        const path = './public/imgs-uploaded/' + meme.newFileName
+        try {
+            fs.unlinkSync(path)
+            //file removed
+        } catch (err) {
+            console.error(err)
+        }
+
+        res.redirect(`/category/${meme.category}`);
+    });
+}
+
 module.exports = {
     index: showHome,
     newMeme,
-    addMeme
+    addMeme,
+    delImg
 }
