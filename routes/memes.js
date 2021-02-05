@@ -1,24 +1,12 @@
 const router = require('express').Router();
 const { memesCtrl } = require('../controllers');
-const multer = require('multer');
-
-/* Setup multer for storing uploaded files */
-let storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/imgs-uploaded')
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + "_" + file.originalname)
-    }
-});
-let upload = multer({ storage: storage });
+const upload = require('../config/multer');
 
 // Insert this middleware for routes that require a logged in user
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
     res.redirect('/');  //redirects user to login
 }
-
 
 router.get('/', memesCtrl.index);
 

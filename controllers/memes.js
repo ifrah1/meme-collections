@@ -1,5 +1,5 @@
 const { Category, Meme } = require('../models');
-// const fs = require('fs');
+const fs = require('fs');
 
 const showHome = (req, res) => {
     Category.find({})
@@ -27,13 +27,18 @@ const newMeme = (req, res) => {
 }
 
 const addMeme = (req, res) => {
-    console.log(req.params.id);
-    console.log(req.user._id);
+    // console.log(req.params.id);
+    // console.log(req.user._id);
+    console.log(req.file);
+
+    //convert image into base64 encoding 
+    let img = fs.readFileSync(req.file.path);
+    let encode_image = img.toString('base64')
+
     const obj = {
-        img: {
-            data: '../public/imgs-uploaded/' + req.file.filename,
-            contentType: 'image/png'
-        },
+        filename: req.file.originalname,
+        contentType: req.file.mimetype,
+        imageBase64: encode_image,
         category: req.params.id,
         user: req.user._id
     }

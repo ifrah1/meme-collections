@@ -44,16 +44,16 @@ const create = (req, res) => {
 }
 
 const showCategory = (req, res) => {
-    console.log(req.user);
-    console.log(req.params.id) //category id
+    // console.log(req.user);
+    // console.log(req.params.id) //category id
 
     Category.findById({ _id: req.params.id }, (err, category) => {
         if (err) return console.log(err);
-        Meme.find({ category: category._id }, (err, items) => {
+        Meme.find({ category: category._id }, (err, images) => {
             res.render('category/showCat', {
                 user: req.user,
                 category,
-                items
+                images
             });
 
         });
