@@ -35,7 +35,7 @@ const create = (req, res) => {
                         exist: false
                     });
                 }
-                res.redirect('/'); //redirect to main page for now
+                res.redirect('/memes'); //redirect to main page for now
 
             });
         }

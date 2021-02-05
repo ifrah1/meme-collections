@@ -48,7 +48,7 @@ const addMeme = (req, res) => {
         }
         else {
             // item.save();
-            res.redirect('/memes');      //main page for now
+            res.redirect(`/category/${req.params.id}`);      //main page for now
         }
     });
     // res.redirect('/');

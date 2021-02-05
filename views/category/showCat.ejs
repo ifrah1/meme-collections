@@ -18,11 +18,19 @@
                             <% images.forEach(function(img) { %>
                                 <div>
                                     <div>
-                                        <img src='data:<%= img.contentType %>;base64,<%= img.imageBase64%>'
-                                            class="card-img-top" class="img-fluid" alt="...">
+                                        <img class="uploaded-image "
+                                            src='data:<%= img.contentType %>;base64,<%= img.imageBase64%>'
+                                            alt="an image">
+
+                                        <% if (img.user.equals(user && user._id)) { %>
+                                            <form action="/memes/<%= img._id %>?_method=DELETE" method="POST">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                            <% } %>
                                     </div>
                                 </div>
                                 <% }) %>
+                        </div>
     </body>
 
     <!-- partial for footer -->
