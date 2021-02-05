@@ -1,5 +1,5 @@
 const { Category, Meme } = require('../models');
-const fs = require('fs');
+// const fs = require('fs');
 
 const showHome = (req, res) => {
     Category.find({})
