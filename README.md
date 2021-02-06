@@ -21,6 +21,9 @@ A place for meme collectors to come together to collect them all. This website a
 ### Delete: 
 ![](readme-imgs/delete.png) 
 
+
+## ER Diagram: 
+![](readme-imgs/newER.png) 
 ## Wireframes:
 ![](readme-imgs/page1.png)
 ![](readme-imgs/page2.png)
