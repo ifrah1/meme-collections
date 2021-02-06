@@ -1,5 +1,4 @@
-# meme-collections
-info
+# Meme Collections App
 
 ## App Demo 
 Link to app: https://serene-sea-32560.herokuapp.com/memes
