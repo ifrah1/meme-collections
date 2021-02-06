@@ -8,11 +8,13 @@
                     <input type="text" name="name" placeholder="type here"
                         class="shadow-none p-2 mb-4 bg-light rounded">
                 </label>
-                <input type="submit" value="Add Category" class="btn btn-primary text-white">
+                <input type="submit" value="Add Category" class="btn btn-danger text-white">
 
             </form>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
             <% if (exist) { %>
-                <p>Category Already exits</p>
+                <p class="text-warning">Category Already exits! Please enter another one.</p>
                 <% } %>
         </div>
 
