@@ -14,7 +14,8 @@ router.get('/', memesCtrl.index);
 router.get('/:id/addmeme', isLoggedIn, memesCtrl.newMeme);
 
 // GET app.com/memes/601b1d63c01af01495fbc7df/new
-router.post('/:id/addmeme', upload.single('image'), isLoggedIn, memesCtrl.addMeme);
+// router.post('/:id/addmeme', upload.single('image'), isLoggedIn, memesCtrl.addMeme);
+router.post('/:id/addmeme', isLoggedIn, memesCtrl.addMeme);
 
 // DELETE /memes/:id
 router.delete('/memes/:id/del', isLoggedIn, memesCtrl.delImg);

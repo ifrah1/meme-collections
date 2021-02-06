@@ -18,7 +18,7 @@ const newMeme = (req, res) => {
     Category.findById({ _id: req.params.id }, (err, category) => {
         if (err) return console.log(err);
 
-        res.render('meme/upload', {
+        res.render('meme/upload-hf', {
             user: req.user,
             category
         });
@@ -26,34 +26,34 @@ const newMeme = (req, res) => {
 
 }
 
-const addMeme = (req, res) => {
-    // console.log(req.params.id);
-    // console.log(req.user._id);
-    console.log(req.file);
+// const addMeme = (req, res) => {
+//     // console.log(req.params.id);
+//     // console.log(req.user._id);
+//     console.log(req.file);
 
-    //convert image into base64 encoding 
-    let img = fs.readFileSync(req.file.path);
-    let encode_image = img.toString('base64')
+//     //convert image into base64 encoding 
+//     let img = fs.readFileSync(req.file.path);
+//     let encode_image = img.toString('base64')
 
-    const obj = {
-        filename: req.file.originalname,
-        contentType: req.file.mimetype,
-        imageBase64: encode_image,
-        newFileName: req.file.filename,
-        category: req.params.id,
-        user: req.user._id
-    }
-    Meme.create(obj, (err, item) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            // item.save();
-            res.redirect(`/category/${req.params.id}`);      //main page for now
-        }
-    });
-    // res.redirect('/');
-}
+//     const obj = {
+//         filename: req.file.originalname,
+//         contentType: req.file.mimetype,
+//         imageBase64: encode_image,
+//         newFileName: req.file.filename,
+//         category: req.params.id,
+//         user: req.user._id
+//     }
+//     Meme.create(obj, (err, item) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             // item.save();
+//             res.redirect(`/category/${req.params.id}`);      //main page for now
+//         }
+//     });
+//     // res.redirect('/');
+// }
 
 const delImg = (req, res) => {
     Meme.findByIdAndRemove({ _id: req.params.id }, (err, meme) => {
@@ -71,6 +71,31 @@ const delImg = (req, res) => {
 
         res.redirect(`/category/${meme.category}`);
     });
+}
+
+const addMeme = (req, res) => {
+    // console.log(req.params.id);
+    // console.log(req.user._id);
+    console.log(req.body);
+
+    const obj = {
+        filename: req.body.name,
+        contentType: "req.file.mimetype",
+        imageBase64: "encode_image",
+        newFileName: "req.file.filename",
+        category: req.params.id,
+        user: req.user._id
+    }
+    Meme.create(obj, (err, item) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            // item.save();
+            res.redirect(`/category/${req.params.id}`);      //main page for now
+        }
+    });
+    // res.redirect('/');
 }
 
 module.exports = {
