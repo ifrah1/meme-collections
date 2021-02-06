@@ -7,6 +7,11 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
+.main-container {
+    position: relative;
+    min-height:90vh;
+  }
+
 .nav-container {
     margin: 20px 20px;
     display: flex;
@@ -28,3 +33,7 @@ a {
     height: 300px;
 }
 
+#footer {
+    position: absolute;
+    width: 100%;
+  }
