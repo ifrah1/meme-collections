@@ -1,37 +1,38 @@
 <!-- partial for head -->
 <%- include('../partials/header') %>
-
-    <body>
-        <%- include('../partials/nav') %>
-            <div class="category-header">
-                <%= category.name %>
-            </div>
-
-            <% if (user) { %>
-                <div class="add-meme-btn"></div>
+    <%- include('../partials/nav') %>
+        <% if (user) { %>
+            <div class="d-flex justify-content-center mb-3">
                 <form action="/memes/<%= category._id %>/addmeme">
-                    <input type="submit" value="Add Meme" />
+                    <input type="submit" value="Add Meme" class="btn btn-primary" />
                 </form>
-                <div>
-                    <% } %>
-                        <div>
-                            <% images.forEach(function(img) { %>
-                                <div>
-                                    <div>
-                                        <img class="uploaded-image "
-                                            src='data:<%= img.contentType %>;base64,<%= img.imageBase64%>'
-                                            alt="an image">
+            </div>
+            <% } %>
 
-                                        <% if (img.user.equals(user && user._id)) { %>
-                                            <form action="/memes/<%= img._id %>/del?_method=DELETE" method="POST">
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                            <% } %>
-                                    </div>
-                                </div>
-                                <% }) %>
+                <div class="d-flex justify-content-center mb-3">
+                    <div
+                        class="category-header col-3 shadow p-3 mb-3 bg-white rounded text-center mx-1 text-primary display-6">
+                        <%= category.name %>
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <% images.forEach(function(img) { %>
+                        <div class="card col-3 d-flex justify-content-center shadow bg-white rounded mb-5 mx-2"
+                            style="width: 20rem;">
+                            <img class="uploaded-image mt-2"
+                                src='data:<%= img.contentType %>;base64,<%= img.imageBase64%>' alt="an image">
+                            <div class="card-body">
+
+                                <% if (img.user.equals(user && user._id)) { %>
+                                    <form action="/memes/<%= img._id %>/del?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                    <% } %>
+                            </div>
                         </div>
-    </body>
+                        <% }) %>
+                </div>
 
-    <!-- partial for footer -->
-    <%- include('../partials/footer') %>
+                <!-- partial for footer -->
+                <%- include('../partials/footer') %>

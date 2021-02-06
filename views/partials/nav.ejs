@@ -1,11 +1,14 @@
-<h1 id="site-title">Meme Collections</h1>
-<ul>
-    <li><a href="/memes">Home</a></li>
-    <li>
-        <% if (user) { %>
-            <a href="/logout">Log Out</a>
-            <% } else { %>
-                <a href="/auth/google">Login with Google</a>
-                <% } %>
-    </li>
-</ul>
+<div class="nav-container">
+    <div class="nav-wrapper">
+        <ul id="nav-bar">
+            <li class="btn btn-primary"><a href="/memes" class="text-white">Home</a></li>
+            <li class="btn btn-primary">
+                <% if (user) { %>
+                    <a href="/logout" class="text-white">Log Out</a>
+                    <% } else { %>
+                        <a href="/auth/google" class="text-white">Login with Google</a>
+                        <% } %>
+            </li>
+        </ul>
+    </div>
+</div>

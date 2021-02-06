@@ -1,14 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
-
 body {
-    background-color: gray;
+    background-color: #f8f8ff;
+}
+.main-container {
+    position: relative;
+    min-height:90vh;
+  }
+
+.nav-container {
+    margin: 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.uploaded-image {
-    width: 500px;
-    height: 500px;
+#nav-bar {
+    list-style-type: none;
+    color: white;
 }
+
+a {
+    text-decoration: none;
+
+}
+.uploaded-image {
+    width: 300px;
+    height: 300px;
+}
+
+#footer {
+    position: absolute;
+    width: 100%;
+  }
