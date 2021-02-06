@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // session handling 
 app.use(session({
-    secret: 'ArifMemeApp', //change later
+    secret: process.env.SESSION_SECRET, //change later
     resave: false,
     saveUninitialized: true
 }));
