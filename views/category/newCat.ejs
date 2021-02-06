@@ -1,18 +1,20 @@
 <!-- partial for head -->
 <%- include('../partials/header') %>
     <%- include('../partials/nav') %>
-        <p>New category page</p>
-        <form id="new-form" action="/category/new" method="POST">
-            <label>
-                <input type="text" name="name">
-            </label>
-            <input type="submit" value="Add Category">
 
-        </form>
-        <% if (exist) { %>
-            <p>Category Already exits</p>
-            <% } %>
-                </body>
+        <div class="d-flex justify-content-center mb-3">
+            <form id="new-form" action="/category/new" method="POST">
+                <label>
+                    <input type="text" name="name" placeholder="type here"
+                        class="shadow-none p-2 mb-4 bg-light rounded">
+                </label>
+                <input type="submit" value="Add Category" class="btn btn-primary text-white">
 
-                <!-- partial for footer -->
-                <%- include('../partials/footer') %>
+            </form>
+            <% if (exist) { %>
+                <p>Category Already exits</p>
+                <% } %>
+        </div>
+
+        <!-- partial for footer -->
+        <%- include('../partials/footer') %>
