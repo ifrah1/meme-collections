@@ -9,8 +9,18 @@ A place for meme collectors to come together to collect them all. This website a
 
 
 ## UI Screenshots: 
-### Start game: 
-![](images/start-game.png) 
+### Main page: 
+![](readme-imgs/main.png) 
+### Add Categories: 
+![](readme-imgs/addCat.png) 
+![](readme-imgs/catAdd.png) 
+
+### Add Memes: 
+![](readme-imgs/addMe.png) 
+![](readme-imgs/addUrl.png)
+
+### Delete: 
+![](readme-imgs/delete.png) 
 
 ## Wireframes:
 ![](readme-imgs/page1.png)
