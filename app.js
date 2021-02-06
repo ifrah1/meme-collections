@@ -7,13 +7,12 @@ const passport = require('passport');
 const methodOverride = require('method-override')
 
 /* Internal Modules*/
-
 const { memesRoute, oAuthRoute, catRoute } = require('./routes');
-
-const PORT = 3000;  // for now local, later will change to .env file
 
 /* Load env vars */
 require('dotenv').config();
+
+const PORT = process.env.PORT || 3005
 
 /* Set up Express App */
 const app = express();
